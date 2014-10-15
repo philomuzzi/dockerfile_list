@@ -11,4 +11,4 @@ RUN apt-get -qq update
 RUN apt-get install -qqy build-essential gdb git golang vim
 RUN mkdir /usr/gopath
 RUN echo "export GOPATH=/usr/gopath" >> /etc/profile
-RUN ["/bin/bash", "-c", "source /etc/profile"]
+CMD ["/bin/bash", "-c", "source /etc/profile"]
