@@ -7,8 +7,8 @@ FROM ubuntu:14.04
 
 MAINTAINER philomuzzi gxlee1986@gmail.com
 
-RUN apt-get update
-RUN apt-get install -y build-essential gdb git golang vim
+RUN apt-get -qq update
+RUN apt-get install -qqy build-essential gdb git golang vim
 RUN mkdir /usr/gopath
 RUN echo "export GOPATH=/usr/gopath" >> /etc/profile
 RUN ["/bin/bash", "-c", "source /etc/profile"]
