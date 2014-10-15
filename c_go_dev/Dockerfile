@@ -12,4 +12,4 @@ RUN apt-get install -qqy build-essential gdb git golang vim
 RUN mkdir /usr/gopath
 ENV GOPATH /usr/gopath
 
-ADD ~/.vimrc ~/
+ADD ../.vimrc ~/
