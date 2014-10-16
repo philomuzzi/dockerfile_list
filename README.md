@@ -1,15 +1,15 @@
 使用方法：
 ---
->>>docker run -i -t --name cgodev -v /root/xxx:/root/xxx philomuzzi/c_go_dev:v1.3 /bin/bash
+>docker run -i -t --name cgodev -v /root/xxx:/root/xxx philomuzzi/c_go_dev:v1.3 /bin/bash
 
 docker基本语法
 ---
->>>
+>
 docker [OPTIONS] COMMAND [arg...]
 
 选项
 ---
->>>
+>
 -D=true|false
     使用 debug 模式。默认为 false。
 
@@ -61,7 +61,7 @@ docker [OPTIONS] COMMAND [arg...]
 命令
 ---
 Docker 的命令可以采用 docker-CMD 或者 docker CMD 的方式执行。两者一致。
->>>
+>
 docker-attach(1)
     依附到一个正在运行的容器中。
 
