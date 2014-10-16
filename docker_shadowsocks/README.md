@@ -1,3 +1,8 @@
+编译方法
+---
+>
+docker build -t philomuzzi/docker_shadowsocks-libev:v1.4.8 docker_shadowsocks/
+
 使用方法
 ---
 >
