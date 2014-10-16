@@ -5,7 +5,7 @@
 
 FROM ubuntu:14.04
 
-MAINTAINER philomuzzi gxlee1986@gmail.com
+MAINTAINER philomuzzi
 
 RUN apt-get -qq update
 RUN apt-get install -qqy build-essential gdb git golang vim
