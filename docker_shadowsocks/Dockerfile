@@ -9,4 +9,8 @@ RUN echo "deb http://shadowsocks.org/debian wheezy main" >> /etc/apt/sources.lis
 RUN apt-get -qq update
 RUN apt-get -qqy --force-yes install shadowsocks
 
+ADD local.conf /etc/sysctl.d/local.conf
+RUN sysctl --system
+RUN ulimit -n 51200
+
 ENTRYPOINT ["/usr/bin/ss-server"]
