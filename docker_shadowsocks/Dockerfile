@@ -12,7 +12,5 @@ RUN apt-get -qqy --force-yes install shadowsocks
 ADD local.conf /etc/sysctl.d/local.conf
 #docker system restrict, need add at readme
 #RUN sysctl --system
-RUN ulimit -n 51200
 
-#ENTRYPOINT ["/usr/bin/ss-server"]
-ENTRYPOINT sysctl --system
+ENTRYPOINT ["ulimit -n 51200 && /usr/bin/ss-server"]

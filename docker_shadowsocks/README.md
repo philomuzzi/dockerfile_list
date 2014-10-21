@@ -1,12 +1,14 @@
 编译方法
 ---
 >
-docker build -t philomuzzi/docker_shadowsocks-libev:v1.4.8 docker_shadowsocks/
+1. docker build -t philomuzzi/docker_shadowsocks-libev:v1.4.8 docker_shadowsocks/
+2. 进入系统sysctl --system
+3. docker commit -m "update optimized info" -a "philomuzzi" 容器ID philomuzzi/docker_shadowsocks-libev:tags
 
 使用方法
 ---
 >
-docker run -d -p [port]:[port] philomuzzi/shadowsocks-libev:tags /usr/bin/ss-server -s 0.0.0.0 -p [port] -k [password] -m aes-256-cfb
+docker run -d -p [port]:[port] philomuzzi/shadowsocks-libev:tags -s 0.0.0.0 -p [port] -k [password] -m aes-256-cfb
 
 参数说明
 ---
