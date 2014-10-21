@@ -8,7 +8,7 @@
 使用方法
 ---
 >
-docker run -d -p [port]:[port] philomuzzi/shadowsocks-libev:tags -s 0.0.0.0 -p [port] -k [password] -m aes-256-cfb
+docker run -d -p [port]:[port] philomuzzi/shadowsocks-libev:tags /usr/bin/ss-server -s 0.0.0.0 -p [port] -k [password] -m aes-256-cfb
 
 参数说明
 ---
