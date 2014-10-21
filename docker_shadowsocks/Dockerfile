@@ -10,9 +10,9 @@ RUN apt-get -qq update
 RUN apt-get -qqy --force-yes install shadowsocks
 
 ADD local.conf /etc/sysctl.d/local.conf
-#docker system restrict, need add at readme
+#no allowed, but will load at system start time
 #RUN sysctl --system
 RUN echo "ulimit -n 51200" >> ~/.bashrc
 RUN ["/bin/bash", "-c", "source ~/.bashrc"]
 
-ENTRYPOINT ["/bin/bash", "-c", "sysctl --system"]
+ENTRYPOINT ["usr/bin/ss-server"]
