@@ -14,4 +14,5 @@ ADD local.conf /etc/sysctl.d/local.conf
 #RUN sysctl --system
 RUN ulimit -n 51200
 
-ENTRYPOINT ["/usr/bin/ss-server"]
+#ENTRYPOINT ["/usr/bin/ss-server"]
+ENTRYPOINT sysctl --system
