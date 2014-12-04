@@ -10,7 +10,7 @@ MAINTAINER philomuzzi
 RUN apt-get -qq update
 RUN apt-get install -qqy build-essential gdb git golang vim
 RUN mkdir /usr/gopath
-RUN mkdir ~/.vim/bundle
+RUN mkdir ~/.vim && mkdir ~/.vim/bundle
 RUN git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 ENV GOPATH /usr/gopath
 
