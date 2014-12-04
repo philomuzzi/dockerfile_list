@@ -2,7 +2,7 @@
 ---
 
 ###生成
-docker build -t="philomuzzi/c_go_dev:v1.4" .
+>docker build -t="philomuzzi/c_go_dev:v1.4" .
 
 
 ###运行

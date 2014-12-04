@@ -14,4 +14,4 @@ RUN mkdir ~/.vim && mkdir ~/.vim/bundle
 RUN git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 ENV GOPATH /usr/gopath
 
-ADD .vimrc ~/.vimrc
+ADD ./.vimrc ~/.vimrc
