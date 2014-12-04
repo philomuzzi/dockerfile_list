@@ -8,10 +8,12 @@ FROM ubuntu:14.04
 MAINTAINER philomuzzi
 
 RUN apt-get -qq update
-RUN apt-get install -qqy build-essential gdb git golang vim
+RUN apt-get install -qqy build-essential gdb git golang vim ctags cscope
 RUN mkdir /usr/gopath
-RUN mkdir ~/.vim && mkdir ~/.vim/bundle
-RUN git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 ENV GOPATH /usr/gopath
 
-ADD ./.vimrc ~/.vimrc
+COPY .vimrc /root/
+
+RUN mkdir ~/.vim && mkdir ~/.vim/bundle
+RUN git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+RUN vim +PluginInstall +qall

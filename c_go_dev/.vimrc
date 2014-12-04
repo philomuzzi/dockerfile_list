@@ -60,12 +60,13 @@ Bundle 'gmarik/vundle'
 
 " original repos on github
 " github上的用户写的插件，使用这种用户名+repo名称的方式
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-scripts/taglist.vim'
 "Plugin 'bling/vim-airline'
-Plugin 'vim-scripts/winmanager'
+"Plugin 'vim-scripts/winmanager'
 Plugin 'vim-scripts/a.vim'
+Plugin 'vim-scripts/grep.vim'
 "Plugin 'kien/ctrlp.vim'
 "Plugin 'vim-scripts/OmniCppComplete'
 "Plugin 'moll/vim-bbye'
@@ -137,24 +138,6 @@ set helplang=cn
 let mapleader=","
 let g:mapleader=","
 
-" nerdtree设置
-" 控制当光标移动超过一定距离时，是否自动将焦点调整到屏中心
-let NERDTreeAutoCenter=1
-" 指定鼠标模式（1.双击打开；2.单目录双文件；3.单击打开）
-" let NERDTreeMouseMode=2
-" 是否默认显示书签列表
-" let NERDTreeShowBookmarks=1
-" 是否默认显示文件
-let NERDTreeShowFiles=1
-" 是否默认显示隐藏文件
-" let NERDTreeShowHidden=1
-" 是否默认显示行号
-" let NERDTreeShowLineNumbers=1
-" 窗口位置（'left' or 'right'）
-" let NERDTreeWinPos='left'
-" 窗口宽
-let NERDTreeWinSize=31
-
 
 " taglist设置
 let Tlist_Show_One_File=1 " 0为同时显示多个文件函数列表,1则只显示当前文件函数列表
@@ -204,23 +187,5 @@ nmap <leader>i :cs find i <C-R>=expand("<cfile>")<CR><CR> :copen<CR><CR>
 set cscopequickfix=s-,c-,d-,i-,t-,e-
 
 
-
-" WinManager设置
-" NERD_Tree集成到WinManager
-let g:NERDTree_title="[NERDTree]"
-function! NERDTree_Start()
-    exec 'NERDTree'
-endfunction
-
-function! NERDTree_IsValid()
-    return 1
-endfunction
-
-" 键盘映射，同时加入防止因winmanager和nerdtree冲突而导致空白页的语句
-nmap wm :if IsWinManagerVisible() <BAR> WMToggle<CR> <BAR> else <BAR> WMToggle<CR>:q<CR> endif <CR><CR>
-" 设置winmanager的宽度，默认为25
-let g:winManagerWidth=30
-" 窗口布局
-let g:winManagerWindowLayout='NERDTree|TagList'
-" 如果所有编辑文件都关闭了，退出vim
-let g:persistentBehaviour=0
+:let Grep_Default_Filelist = '*/*.h */*.cpp */*.c'
+:let Grep_Skip_Files = '*.bak *~'
