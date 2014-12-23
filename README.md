@@ -1,3 +1,23 @@
+使用多shell连接到docker容器，宿主机需要做的工作
+---
+
+安装工具
+>
+$ wget https://www.kernel.org/pub/linux/utils/util-linux/v2.24/util-linux-2.24.tar.gz; tar xzvf util-linux-2.24.tar.gz
+$ cd util-linux-2.24
+$ ./configure --without-ncurses && make nsenter
+$ sudo cp nsenter /usr/local/bin
+
+
+使用nsenter进入容器
+>
+1. ubuntu需要通过`sudo passwd root`来配置root的密码，然后可以通过su提升到root用户
+2. 提升到root用户，`PID=$(docker inspect --format "{{ .State.Pid }}" <container>)`
+3. `nsenter --target $PID --mount --uts --ipc --net --pid`
+4. 或者`wget -P ~ https://github.com/yeasy/docker_practice/raw/master/_local/.bashrc_docker;`
+5. 然后`echo "[ -f ~/.bashrc_docker ] && . ~/.bashrc_docker" >> ~/.bashrc; source ~/.bashrc`
+6. 之后可以使用`docker-enter <container>`进入容器
+
 docker基本语法
 ---
 >
