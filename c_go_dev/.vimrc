@@ -173,7 +173,7 @@ if has("cscope")
     endif
     set csverb
 endif
-map <F4>:!cscope -Rbq<CR>:cs add ./cscope.out .<CR><CR><CR> :cs reset<CR>
+map <F4> :!cscope -Rbq<CR>:cs add ./cscope.out .<CR><CR><CR> :cs reset<CR>
 "对:cs find c等Cscope查找命令进行映射
 nmap <leader>s :cs find s <C-R>=expand("<cword>")<CR><CR> :copen<CR><CR>
 nmap <leader>g :cs find g <C-R>=expand("<cword>")<CR><CR>
