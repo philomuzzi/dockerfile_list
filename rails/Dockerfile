@@ -8,6 +8,7 @@ FROM ubuntu:14.04
 MAINTAINER philomuzzi
 
 RUN apt-get -qq update
+RUN apt-get -qq upgrade
 RUN apt-get install -qqy build-essential bison openssl libreadline6 libreadline6-dev curl gdb git vim ctags cscope openssh-server zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev
 
 COPY .vimrc /root/
