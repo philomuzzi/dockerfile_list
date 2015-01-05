@@ -1,5 +1,5 @@
 # This dockerfile uses the ubuntu 14.04 image
-# VERSION 1 - EDITION 1
+# VERSION 1 - EDITION 2
 # Author: philomuzzi
 # 一个Rails开发环境，包含Git, Vim
 
@@ -18,5 +18,6 @@ RUN vim +PluginInstall +qall
 
 RUN wget http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.5.tar.gz && tar xvfz ruby-2.1.5.tar.gz
 RUN cd ruby-2.1.5/ && ./configure && make && make install
+RUN rm ruby-2.1.5.tar.gz && rm -r ruby-2.1.5/
 
 RUN gem install rails
