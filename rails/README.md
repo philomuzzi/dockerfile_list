@@ -2,7 +2,7 @@
 ---
 
 ###生成
->docker build -t="philomuzzi/rails:v1.0" .
+>docker build --no-cache=true -t="philomuzzi/rails:v1.0" .
 
 
 ###运行
