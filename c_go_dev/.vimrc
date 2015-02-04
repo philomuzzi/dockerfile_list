@@ -70,6 +70,7 @@ Plugin 'vim-scripts/grep.vim'
 "Plugin 'kien/ctrlp.vim'
 "Plugin 'vim-scripts/OmniCppComplete'
 "Plugin 'moll/vim-bbye'
+Plugin 'fatih/vim-go'
 
 
 " vim-scripts repos
